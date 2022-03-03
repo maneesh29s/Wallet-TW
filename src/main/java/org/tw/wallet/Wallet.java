@@ -7,11 +7,15 @@ public class Wallet {
     protected double amount = 0;
     protected WalletCurrency currency = RUPEE;
 
-    public void addMoney(double amount, WalletCurrency inputCurrency) {
+    private void addMoney(double amount, WalletCurrency inputCurrency) {
         this.amount += this.currency.convertFromBase(inputCurrency.convertToBase(amount));
     }
 
-    public void addRupee(double amount) {
+    private void removeMoney(double amount, WalletCurrency inputCurrency) {
+        this.amount -= this.currency.convertFromBase(inputCurrency.convertToBase(amount));
+    }
+
+    public void addRupees(double amount) {
         addMoney(amount, RUPEE);
     }
 
@@ -19,10 +23,17 @@ public class Wallet {
         addMoney(amount, DOLLAR);
     }
 
+    public void removeRupees(double amount) {
+        removeMoney(amount, RUPEE);
+    }
+
+    public void removeDollars(double amount) {
+        removeMoney(amount, DOLLAR);
+    }
+
     public void setCurrency(WalletCurrency currency) {
         this.amount = currency.convertFromBase(this.currency.convertToBase(this.amount));
         this.currency = currency;
     }
-
 
 }
