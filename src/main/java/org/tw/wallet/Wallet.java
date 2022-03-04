@@ -31,9 +31,12 @@ public class Wallet {
         removeMoney(amount, DOLLAR);
     }
 
-    public void setCurrency(WalletCurrency currency) {
+    public void setPreferredCurrency(WalletCurrency currency) {
         this.amount = currency.convertFromBase(this.currency.convertToBase(this.amount));
         this.currency = currency;
     }
 
+    public double getAmount() {
+        return this.amount;
+    }
 }

@@ -6,10 +6,6 @@ public class FakeWallet extends Wallet {
         super();
     }
 
-    public double getAmount() {
-        return super.amount;
-    }
-
     public WalletCurrency getCurrency() {
         return super.currency;
     }
