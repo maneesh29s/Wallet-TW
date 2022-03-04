@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.tw.wallet.WalletCurrency.DOLLAR;
-import static org.tw.wallet.WalletCurrency.RUPEE;
 
 public class WalletTest {
 
